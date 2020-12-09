@@ -1,0 +1,151 @@
+IQ-TREE multicore version 1.6.10 for Windows 64-bit built Feb 19 2019
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    cardenas (AVX2, FMA3, 15 GB RAM)
+Command: D:\Graduate School\Trachy manuscript\GENOME_delimitation\IQ_tree\bin\iqtree.exe -s concatenated_samples.nex -o Myc_tur_571_CR071225_02 -spp parti.nex -m MF+MERGE
+Seed:    807162 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Tue Oct 08 10:25:55 2019
+Kernel:  AVX+FMA - 1 threads (12 CPU cores detected)
+
+HINT: Use -nt option to specify number of threads because your CPU has 12 cores!
+HINT: -nt AUTO will automatically determine the best number of threads to use.
+
+Reading partition model file parti.nex ...
+Reading alignment file concatenated_samples.nex ... Nexus format detected
+Skipping unknown block (SETS)...
+Alignment has 11 sequences with 2749 columns, 64 distinct patterns
+25 parsimony-informative, 50 singleton sites, 2674 constant sites
+                            Gap/Ambiguity  Composition  p-value
+   1  Myc_nsp_312_UGM951118_02     11.09%    passed     98.74%
+   2  Myc_nsp_449_RMMA050801_08     0.00%    passed     99.92%
+   3  Myc_nsp_450_RMMA050727_06     0.00%    passed    100.00%
+   4  Myc_nsp_575_JSC030826_01      0.00%    passed     99.93%
+   5  Myc_nsp_858_RMMA090930_09     0.00%    passed     99.93%
+   6  Myc_nsp_862_RMMA050105_29     0.00%    passed     99.93%
+   7  Myc_zet_451_RMMA050816_04     0.00%    passed     99.64%
+   8  Myc_zet_A444_RMMA050818_05    2.18%    passed     98.90%
+   9  Myc_tur_571_CR071225_02       0.04%    passed     99.95%
+  10  Myc_tur_T25_CR051012_01      15.13%    passed     88.73%
+  11  Tzet1.0                       0.00%    passed     99.93%
+****  TOTAL                         2.59%  0 sequences failed composition chi2 test (p-value<5%; df=3)
+NOTE: No CharPartition defined, use all CharSets
+
+Loading 4 partitions...
+Subset	Type	Seqs	Sites	Infor	Invar	Model	Name
+1		11	1074	12	1035	MF+MERGE	genome_F1
+2		11	516	2	510	MF+MERGE	genome_F2
+3		11	456	4	450	MF+MERGE	genome_LWRh
+4		11	703	7	679	MF+MERGE	genome_WG
+Degree of missing data: 0.000
+Info: multi-threading strategy over partitions
+
+NOTE: Myc_nsp_858_RMMA090930_09 is identical to Myc_nsp_575_JSC030826_01 but kept for subsequent analysis
+NOTE: 2 identical sequences (see below) will be ignored for subsequent analysis
+NOTE: Myc_nsp_862_RMMA050105_29 (identical to Myc_nsp_575_JSC030826_01) is ignored but added at the end
+NOTE: Tzet1.0 (identical to Myc_nsp_575_JSC030826_01) is ignored but added at the end
+Concatenated alignment was printed to parti.nex.uniqueseq.phy
+
+For your convenience alignment with unique sequences printed to parti.nex.uniqueseq.phy
+
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.005 seconds
+NOTE: ModelFinder requires 0 MB RAM!
+Testing GTR+F+G on supermatrix...
+GTR+F+G4 / LnL: -4358.692 / df: 24 / AIC: 8765.384 / AICc: 8765.824 / BIC: 8907.439
+Selecting individual models for 4 charsets using BIC...
+ No. Model        Score       Charset
+   1 K2P+I        3568.550    genome_F1
+   2 JC           1543.452    genome_F2
+   3 K2P          1362.542    genome_LWRh
+   4 K2P          2288.251    genome_WG
+Full partition model BIC score: 8884.474 (LnL: -4355.128  df:22)
+Merging models to increase model fit (about 13 total partition schemes)...
+   5 K2P+I        8884.863    genome_F1+genome_F2
+   6 K3P+I        8887.749    genome_F1+genome_LWRh
+   7 K2P+I        8871.821    genome_F1+genome_WG
+   8 K2P          8876.708    genome_F2+genome_LWRh
+   9 K2P          8883.818    genome_F2+genome_WG
+  10 K2P          8876.739    genome_LWRh+genome_WG	0h:0m:1s (0h:0m:0s left)
+Merging genome_F1+genome_WG with BIC score: 8871.821 (LnL: -4356.720  df: 20)
+  11 K2P+I        8873.498    genome_F1+genome_F2+genome_WG	0h:0m:1s (0h:0m:0s left)
+  12 TNe+I        8874.620    genome_F1+genome_LWRh+genome_WG	0h:0m:1s (0h:0m:0s left)
+Merging genome_F2+genome_LWRh with BIC score: 8864.055 (LnL: -4356.797  df: 19)
+  13 K2P+I        8866.344    genome_F1+genome_F2+genome_LWRh+genome_WG	0h:0m:1s (0h:0m:0s left)
+BEST-FIT PARTITION MODEL: 
+  charpartition BIC = K2P+I: genome_F1 genome_WG, K2P: genome_F2 genome_LWRh;
+Agglomerative model selection: ((genome_F1,genome_WG)1:8871.82,(genome_F2,genome_LWRh)2:8864.06)
+Merging into 2 partitions...
+Partition information was printed to parti.nex.best_scheme.nex
+Partition information in Raxml format was printed to parti.nex.best_scheme
+
+All model information printed to parti.nex.model.gz
+CPU time for ModelFinder: 1.719 seconds (0h:0m:1s)
+Wall-clock time for ModelFinder: 1.971 seconds (0h:0m:1s)
+
+NOTE: 0 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.010)
+Initial log-likelihood: -4404.417
+Current log-likelihood at step 1: -4364.245
+Current log-likelihood at step 2: -4364.036
+Current log-likelihood at step 3: -4363.936
+Current log-likelihood at step 4: -4363.840
+Current log-likelihood at step 5: -4363.743
+Current log-likelihood at step 6: -4363.644
+Current log-likelihood at step 7: -4363.545
+Current log-likelihood at step 8: -4363.445
+Current log-likelihood at step 9: -4363.343
+Current log-likelihood at step 10: -4363.241
+Current log-likelihood at step 11: -4363.137
+Current log-likelihood at step 12: -4363.032
+Current log-likelihood at step 13: -4362.926
+Current log-likelihood at step 14: -4362.818
+Current log-likelihood at step 15: -4362.710
+Current log-likelihood at step 16: -4362.600
+Current log-likelihood at step 17: -4362.489
+Current log-likelihood at step 18: -4362.376
+Current log-likelihood at step 19: -4362.262
+Current log-likelihood at step 20: -4362.147
+Current log-likelihood at step 21: -4362.030
+Current log-likelihood at step 22: -4361.913
+Current log-likelihood at step 23: -4361.793
+Current log-likelihood at step 24: -4361.673
+Current log-likelihood at step 25: -4361.551
+Current log-likelihood at step 26: -4361.428
+Current log-likelihood at step 27: -4361.303
+Current log-likelihood at step 28: -4361.177
+Current log-likelihood at step 29: -4361.050
+Current log-likelihood at step 30: -4360.922
+Current log-likelihood at step 31: -4360.792
+Current log-likelihood at step 32: -4360.661
+Current log-likelihood at step 33: -4360.529
+Current log-likelihood at step 34: -4360.396
+Current log-likelihood at step 35: -4360.262
+Current log-likelihood at step 36: -4360.127
+Current log-likelihood at step 37: -4359.991
+Current log-likelihood at step 38: -4359.854
+Current log-likelihood at step 39: -4359.716
+Current log-likelihood at step 40: -4359.579
+Current log-likelihood at step 41: -4359.440
+Current log-likelihood at step 42: -4356.717
+Current log-likelihood at step 43: -4356.711
+Partition-specific rates:  1.340 0.378
+Parameters optimization took 42 rounds (0.120 sec)
+
+BEST SCORE FOUND : -4356.711
+Total tree length: 0.033
+
+Total number of iterations: 0
+CPU time used for tree search: 0.000 sec (0h:0m:0s)
+Wall-clock time used for tree search: 0.000 sec (0h:0m:0s)
+Total CPU time used: 0.047 sec (0h:0m:0s)
+Total wall-clock time used: 0.148 sec (0h:0m:0s)
+
+Analysis results written to: 
+  IQ-TREE report:                parti.nex.iqtree
+  Tree used for ModelFinder:     parti.nex.treefile
+  Best partitioning scheme:      parti.nex.best_scheme.nex
+           in RAxML format:      parti.nex.best_scheme
+  Screen log file:               parti.nex.log
+
+Date and Time: Tue Oct 08 10:25:58 2019
